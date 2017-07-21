@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
+body {
+  padding:50px;
+  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#777;
+  font-weight:300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:#222;
+  padding-bottom: 20px;
+}
+
+p, ul, ol, table, pre, dl {
+  padding-bottom: 20px;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  color: #393939;
+}
+
+h3, h4, h5, h6 {
+  color: #494949;
+}
+
+.link-in-list {
+  color: #39c;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+/*.profile-image {
+  width: 280px;
+  height: auto;
+}
+
+.link-in-list {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.sparse-list li {
+  padding-bottom: 8px;*/
+}
