@@ -81,8 +81,8 @@ var cy = cytoscape({
 });
 
 var achievements = {
-	firstEdge: {earned:false, msg:"Congratulations! You just made your first connection between node elements!"},
-	firstChapterComplete: {earned:false, msg:"Congratulations! You just completed your first chapter!"},
+	firstEdge: {earned:false, msg:"Congratulations! You just made your first edge connection! +1 keyword node rewarded."},
+	firstChapterComplete: {earned:false, msg:"Congratulations! You just completed your first chapter! +5 keyword nodes rewarded."},
 }
 updateProgress();
 playLayout();
