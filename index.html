@@ -1,84 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tree of Knowledge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="css-circular-prog-bar.css" media="all">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2017.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
 
-  <title>Junsoo Park</title>
-  <meta name="description" content="Junsoo Park's homepage">
+  <!-- Vertical Navigation bar -->
+  <div class="w3-sidebar w3-bar-block w3-2017-navy-peony" style="width:15%">
+  <div class="w3-container w3-2017-navy-peony w3-margin-bottom" style="height: 15%">
+    <img src="images/tree_logo.png" alt="Logo" style="width:55%;opacity:0.85;margin-left:23%;margin-top:5%;">
+  </div>
 
-  <link href="./css/minimal.css" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet">
-</head>
+  <div class="w3-card-4 test w3-margin-bottom w3-section" style="width:100%; max-width:300px;">
+    <img src="images/img_avatar3.png" alt="Avatar" style="width:80%;opacity:0.85;margin-left:10%;margin-top:16px;">
+    <div class="w3-container">
+    <h4 style="text-align:center;"><b>Jun</b></h4>
+    <button class="w3-button w3-teal w3-margin-bottom" style="margin-left:10%;" title="현재까지 작성한 트리를 모아서 보는 것이 가능합니다">Go to Garden</button>
+    </div>
+  </div>
+
+  <a href="#" class="w3-bar-item w3-button w3-2017-grenadine" title="수강중인 강의의 다른 트리를 볼 수 있습니다"><i class="material-icons w3-left w3-margin-right">home</i>Class</a>
+  <a href="#" class="w3-bar-item w3-button" title="가장 많은 좋아요를 획득한 트리를 볼 수 있습니다"><i class="material-icons w3-left w3-margin-right" >whatshot</i>Popular</a>
+  <a href="#" class="w3-bar-item w3-button" title="구독한 사용자의 트리를 볼 수 있습니다"><i class="material-icons w3-left w3-margin-right">people</i>Subscribe</a>
+  <a href="#" class="w3-bar-item w3-button" title="구독한 사용자가 새로운 트리를 작성하였을때 알려줍니다"><i class="material-icons w3-left w3-margin-right">notifications</i>Notification<span class="w3-tag w3-2017-grenadine w3-right">8</span></a>
+  <a id="favorite" href="#" class="w3-bar-item w3-button" title="사용자가 좋아요를 한 트리를 보여줍니다"><i class="material-icons w3-left w3-margin-right">favorite</i> Favorite</a>
+
+  <button class="help w3-display-bottomleft" id="helpbtn"><i class="material-icons" style="font-size:35px;color:white">help_outline</i></button>
+
+</div>
+
+<!-- body -->
 <body>
-  <div class="container">
-    <header>
-      <span class="logo">Junsoo Park</span>
-      <nav class="float-right">
-        <ul>
-          <li><a href="./assets/homer-simpson-cv.pdf">Link to CV</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <!-- <div class="row"><div class="col-12"><img class="center" src="http://imgfill.com/728x90"></div></div> -->
+  <div id="helpModal" class="modal">
 
-    <div class="row">
-      <img class="profile-image float-left" src="./assets/Face.jpg">
-      <p>
-				I am interested in HCI, Machine Learning and Video Games. 
-      </p>
-    </div>
-
-    <hr />
-
-    <div class="row">
-      <div class="col-6">
-        <h2>Education</h2>
-        <ul>
-          <li>KAIST, M.S., Computer Science, 2016 - Present</li>
-          <li>KAIST, B.S., Computer Science, 2016</li>
-        </ul>
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>How to use Tree of Knowledge</h2>
       </div>
-      <div class="col-6">
-        <h2>Work Experience</h2>
-        <ul>
-          <li><b>Game Dev Intern</b>, 5MinLab, 2015</li>
-          <li><b>Military Service</b>, ROK Army, 2012 - 2014</li>
-        </ul>
+      <div class="modal-body">
+        <p>Tree of Knowledge는 온라인 강의학습을 도와주기 위한 마인드맵 제작 플랫폼입니다.</p>
+        <p>마인드맵은 총 4종류의 노드로 구성할 수 있습니다.</p>
+        <p><font style="background-color:red;">강의 노드</font>: 강의명</p>
+        <p><font color="white" style="background-color:brown;">챕터 노드</font>: 강의의 각 챕터명</p>
+        <p><font style="background-color:cyan;">키워드 노드</font>: 사용자가 작성 가능한 챕터의 키워드. 개수가 한정됨.</p>
+        <p><font style="background-color:yellow;">문단 노드</font>: 사용자가 자유롭게 작성 가능한 노트</p>
+        <br/>
+        <p><font style="background-color:cyan;">키워드 노드</font>는 오른쪽 인벤토리의 버튼을 통해 생성가능합니다.</p>
+        <p><font style="background-color:yellow;">문단 노드</font>는 오른쪽 클릭을 통해 자유롭게 생성가능합니다.</p>
+        <p>노드를 연결하는 <b>엣지</b>는 노드를 오른쪽 클릭하여 "add edge"를 선택한 후 연결하고 싶은 다른 노드를 클릭하면 생성가능합니다.</p>
+        <p>노드의 내용은 오른쪽 텍스트 에디터를 통해 수정할 수 있습니다.</p>
+        <br/>
+        <p>UI에 관한 설명은 해당 인터페이스에 마우스를 가져가시면 보실 수 있습니다.</p>
+        <p>기타 문의사항은 제작자에 개인적으로 연락부탁드립니다.</p>
       </div>
+      <!-- <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div> -->
     </div>
 
-    <hr />
+  </div>
 
-    <div class="row">
-      <h2>Publications</h2>
-      <ol class="sparse-list">
-        <li>
-          SungSil Kim, <b>Junsoo Park</b>, Woontak Woo. <b>Quantified Lockscreen: 감정 마이닝과 자기정량화를 위한 개인화된 표정인식 및 모바일 잠금화면 통합 어플리케이션 (2015)</b>. KIISE 2015.<br />
-        </li>
-        <li>
-          Lisa Simpson, Moe Szyslak, <b>Homer Simpson</b>, and Bart Simpson. <b>Neliph: Effective Visualization of Running History for Peer Assessment in Powerplant Management</b>. NLOS ONE, 2004<br />
-        </li>
-      </ol>
+  <div id="cy">
+    <!-- <div class="w3-panel w3-red w3-display-container w3-card" style="position: absolute;right:0;opacity: 0.95;z-index:11;">
+      <span onclick="this.parentElement.style.display='none'"
+      class="w3-button w3-red w3-large w3-display-topright">&times;</span>
+      <h4><b>Fail!</b></h4>
+      <p>There is no leaf.</p>
+    </div> -->
+    <div class="alert" id="cardError" style="display:none;">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <strong>Fail!</strong> There is no leaf.
     </div>
-
-    <hr />
-
-    <div class="row">
-      <h2>Contact</h2>
-      <p>
-        Junsoo Park <br />
-        parkjunsoo91 (at) gmail.com <br />
-        MS Student <br />
-        KAIST <br />
-        Daejeon, Korea <br />
-      </p>
+    <div class="reward" id="cardReward" style="display:none;">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <div id="rewardMsg">
+      <strong>Great!</strong> You have done well.</div>
     </div>
-
-    <footer>
-        <a class="float-right" href="http://minimalcss.com">Minimal</a>
-    </footer>
+    <div id="fspawn_p" class="fspawn">
+      <!-- <img id="fruit_test" src="images/fruit2.png" width="50px"></img> -->
+    </div>
+    <div id="sspawn_p" class="sspawn">
+      <!-- <img id="fruit_test"></img> -->
+    </div>
+    <div class="tree">
+      <img src="images/tree1.jpg">
+    </div>
+    <div class="heart" title="이 트리가 획득한 좋아요 개수를 보여줍니다">
+      <img src="images/heart-icon.png">
+      <span>23</span>
+    </div>
   </div>
 </body>
+
+<!-- right sidebar -->
+<div class="w3-sidebar w3-bar-block w3-2017-greenery" style="width:20%;right:0%;">
+
+  <div class="w3-container w3-margin-bottom" style="width: 80%;margin-left:10%;">
+    <p>
+    <button id='share' class="w3-button w3-block w3-2017-grenadine" title="이 트리를 다른 사용자와 공유할 수 있습니다">SHARE</button>
+  </p>
+  </div>
+
+  <div class="w3-container w3-margin-top w3-margin-bottom" title="노드와 데코 아이템을 가지고 있는 개수만큼 트리에 배치할 수 있습니다">
+    <table class="w3-light-grey w3-border" style="width:100%;text-align:center;">
+      <tr>
+        <td class="resbtn" style="width: 60%;">
+          <div id="nodebtn" onclick="addPredefinedNode()">
+            <img src="images/node_leaf1.png" alt="Node" style="height:40px"/>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="nodenum" value="4" readonly="readonly" style="width:20%;">
+          <!-- <span id="nondenum"></span> -->
+        </td>
+      </tr>
+      <tr>
+        <td class="resbtn" onclick="addFruit()">
+          <div>
+            <img src="images/fruit2.png" alt="Fruit" style="height:40px"/>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="fruitnum" value="1" readonly="readonly" style="width:20%;">
+        </td>
+      </tr>
+      <tr>
+        <td class="resbtn" onclick="addSun()">
+          <div>
+            <img src="images/sun4.png" alt="Sun" style="height:40px"/>
+          </div>
+        </td>
+        <td>
+          <input type="text" id="sunnum" value="1" readonly="readonly" style="width:20%;">
+        </td>
+      </tr>
+      <!-- <tr>
+        <td></td>
+        <td></td>
+      </tr> -->
+    </table>
+  </div>
+
+  <div class="input_text w3-container" title="노드의 내용을 수정하는 것이 가능합니다">
+      <p>
+      <textarea id="textarea" rows="5" cols="25" class="w3-block" style="background-color:white;"></textarea></p>
+      <p>
+      <button id="edit" class="w3-button w3-block" style="background-color: #53777A;">EDIT</button></p>
+  </div>
+
+  <div class="progress-circle p25" style="margin-left: 30%;" title="남은 노드의 양을 보여줍니다">
+     <span><img src="images/leaf3.png" alt="3" style="height:60px;margin-top:20%;"/></span>
+     <div class="left-half-clipper">
+        <div class="first50-bar"></div>
+        <div class="value-bar"></div>
+     </div>
+  </div>
+
+  <div title="온라인 강의 진도와 사용자가 작성한 트리의 진도를 비교할 수 있습니다">
+    <span style="margin-left: 5%;">MOOC</span>
+    <div class="w3-light-grey" style="margin-left:5%;margin-right:5%;">
+      <div class="w3-container w3-2017-shaded-spruce" style="width:30%;height:20px;"></div>
+    </div>
+    <span style="margin-left: 5%;">USER</span>
+    <div class="w3-light-grey" style="margin-left:5%;margin-right:5%;">
+      <div class="w3-container w3-2017-primrose-yellow" style="width:20%;height:20px;"></div>
+    </div>
+  </div>
+
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.5/cytoscape.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.7.0/cytoscape-qtip.js"></script>
+  <link href="cytoscape-context-menus.css" rel="stylesheet" type="text/css" />
+  <script src="lib/cytoscape-context-menus.js"></script>
+  <script src="lib/cytoscape-automove.js"></script>
+  <!--script src="http://d3js.org/d3.v3.min.js"></script-->
+  <script src="app-cy-stylesheet.js"></script>
+  <script src="app-cy-layouts.js"></script>
+  <script src="preset-elements.js"></script>
+  <script src="app.js"></script>
+
 </html>
